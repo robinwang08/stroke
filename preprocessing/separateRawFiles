@@ -1,0 +1,23 @@
+import os
+import pydicom
+
+fromPath = 'F:/Research/data/raw'
+
+#Use acquisition number to separate
+for x in range(227, 228):
+    path = fromPath + '/' + str(x) + '/CT/raw'
+    if os.path.isdir(path):
+        os.mkdir(fromPath + '/' + str(x) + '/CT/separate/')
+        for filename in os.listdir(path):
+            filePath = path + '/' + filename
+            ds = pydicom.dcmread(filePath)
+            acquisitionNumber = ds.AcquisitionNumber
+
+            #get all
+            folderPath = fromPath + '/' + str(x) + '/CT/separate/' + str(acquisitionNumber)
+            newFilePath = folderPath + '/' + filename
+            if not os.path.isdir(folderPath):
+                os.mkdir(folderPath)
+            os.rename(filePath, newFilePath)
+
+

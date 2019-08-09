@@ -1,0 +1,33 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+tensorflow = "*"
+jupyter = "*"
+keras = "*"
+pillow = "*"
+yapf = "*"
+pynrrd = "*"
+matplotlib = "*"
+pandas = "*"
+scikit-image = "*"
+numpy = "*"
+simpleitk = "*"
+seaborn = "*"
+scipy = "*"
+keras-vis = "*"
+tensorflow-gpu = "*"
+sklearn = "*"
+tqdm = "*"
+ipython = "*"
+deepneuro = "*"
+dicom2nifti = "*"
+nibabel = "*"
+
+
+[requires]
+python_version = "3.7"

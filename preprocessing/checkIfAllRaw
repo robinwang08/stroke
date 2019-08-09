@@ -1,0 +1,32 @@
+
+import os
+import pydicom
+
+
+def processFiles(mainpath, orig):
+    if not os.path.isdir(mainpath):
+        return
+    for root, dirs, files in os.walk(mainpath):
+        mainSeriesUID = 'X'
+        for file in files:
+            filename = mainpath + file
+            ds = pydicom.dcmread(filename)
+            if not ds.SeriesDescription == 'VPCT  DynMulti4D  10.0  H20f':
+                os.remove(filename)
+            #if mainSeriesUID == 'X':
+                #mainSeriesUID = ds.SeriesInstanceUID
+            #if not ds.SeriesInstanceUID == mainSeriesUID:
+                #print(filename)
+
+
+    return
+
+
+path = 'F:/Research/data/raw'
+
+z = path + '/' + str(1) + '/CT/'
+y = z + 'raw/'
+processFiles(y, z)
+
+
+
