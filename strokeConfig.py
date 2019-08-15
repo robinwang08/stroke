@@ -11,16 +11,19 @@ class Config(object):
     train_Tmax = './examples/configFiles/stroke/train/trainChannels_Tmax.cfg'
     train_GT = './examples/configFiles/stroke/train/trainGtLabels.cfg'
 
-    validation_MTT = './examples/configFiles/stroke/validation/validationChannels_MTT.cfg'
-    validation_rCBF = './examples/configFiles/stroke/validation/validationChannels_rCBF.cfg'
-    validation_rCBV = './examples/configFiles/stroke/validation/validationChannels_rCBV.cfg'
-    validation_Tmax = './examples/configFiles/stroke/validation/validationChannels_Tmax.cfg'
-    validation_GT = './examples/configFiles/stroke/validation/validationGtLabels.cfg'
+    validation_MTT = './examples/configFiles/stroke/train/validation/validationChannels_MTT.cfg'
+    validation_rCBF = './examples/configFiles/stroke/train/validation/validationChannels_rCBF.cfg'
+    validation_rCBV = './examples/configFiles/stroke/train/validation/validationChannels_rCBV.cfg'
+    validation_Tmax = './examples/configFiles/stroke/train/validation/validationChannels_Tmax.cfg'
+    validation_GT = './examples/configFiles/stroke/train/validation/validationGtLabels.cfg'
+    validation_pred = './examples/configFiles/stroke/train/validation/validationNamesOfPredictions.cfg'
+
 
     test_MTT = './examples/configFiles/stroke/test/testChannels_MTT.cfg'
     test_rCBF = './examples/configFiles/stroke/test/testChannels_rCBF.cfg'
     test_rCBV = './examples/configFiles/stroke/test/testChannels_rCBV.cfg'
     test_Tmax = './examples/configFiles/stroke/test/testChannels_Tmax.cfg'
     test_GT = './examples/configFiles/stroke/test/testGtLabels.cfg'
+    test_pred = './examples/configFiles/stroke/test/testNamesOfPredictions.cfg'
 
 config = Config()
