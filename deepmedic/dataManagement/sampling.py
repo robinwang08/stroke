@@ -485,8 +485,14 @@ def sample_coords_of_segments(  log,
                                                             halfImagePartBoundaries[2][0]: dims_of_scan[2] - halfImagePartBoundaries[2][1]] = 1
                                                             
     constrainedWithImageBoundariesMaskToSample = weightMapToSampleFrom * booleanNpArray_voxelsToCentraliseImPartsWithinBoundaries
+
+    ndsum = np.sum(constrainedWithImageBoundariesMaskToSample)
+    if ndsum == 0:
+        print('Issue here ' + id_str)
+        ndsum = 1
+
     #normalize the probabilities to sum to 1, cause the function needs it as so.
-    constrainedWithImageBoundariesMaskToSample = constrainedWithImageBoundariesMaskToSample / (1.0* np.sum(constrainedWithImageBoundariesMaskToSample))
+    constrainedWithImageBoundariesMaskToSample = constrainedWithImageBoundariesMaskToSample / (1.0* ndsum)
     
     flattenedConstrainedWithImageBoundariesMaskToSample = constrainedWithImageBoundariesMaskToSample.flatten()
     
