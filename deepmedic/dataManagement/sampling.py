@@ -488,19 +488,25 @@ def sample_coords_of_segments(  log,
 
     ndsum = np.sum(constrainedWithImageBoundariesMaskToSample)
     if ndsum == 0:
-        print('Issue here ' + id_str)
         ndsum = 1
+        # normalize the probabilities to sum to 1, cause the function needs it as so.
+        constrainedWithImageBoundariesMaskToSample = constrainedWithImageBoundariesMaskToSample / (1.0 * ndsum)
+        flattenedConstrainedWithImageBoundariesMaskToSample = constrainedWithImageBoundariesMaskToSample.flatten()
+        # This is going to be a 3xNumberOfImagePartSamples array.
+        indicesInTheFlattenArrayThatWereSampledAsCentralVoxelsOfImageParts = np.random.choice(
+            constrainedWithImageBoundariesMaskToSample.size,
+            size=numOfSegmentsToExtractForThisSubject,
+            replace=True)
+    else:
+        #normalize the probabilities to sum to 1, cause the function needs it as so.
+        constrainedWithImageBoundariesMaskToSample = constrainedWithImageBoundariesMaskToSample / (1.0* ndsum)
+        flattenedConstrainedWithImageBoundariesMaskToSample = constrainedWithImageBoundariesMaskToSample.flatten()
+        #This is going to be a 3xNumberOfImagePartSamples array.
+        indicesInTheFlattenArrayThatWereSampledAsCentralVoxelsOfImageParts = np.random.choice(  constrainedWithImageBoundariesMaskToSample.size,
+                                                                                                size = numOfSegmentsToExtractForThisSubject,
+                                                                                                replace=True,
+                                                                                                p=flattenedConstrainedWithImageBoundariesMaskToSample)
 
-    #normalize the probabilities to sum to 1, cause the function needs it as so.
-    constrainedWithImageBoundariesMaskToSample = constrainedWithImageBoundariesMaskToSample / (1.0* ndsum)
-    
-    flattenedConstrainedWithImageBoundariesMaskToSample = constrainedWithImageBoundariesMaskToSample.flatten()
-    
-    #This is going to be a 3xNumberOfImagePartSamples array.
-    indicesInTheFlattenArrayThatWereSampledAsCentralVoxelsOfImageParts = np.random.choice(  constrainedWithImageBoundariesMaskToSample.size,
-                                                                                            size = numOfSegmentsToExtractForThisSubject,
-                                                                                            replace=True,
-                                                                                            p=flattenedConstrainedWithImageBoundariesMaskToSample)
     # np.unravel_index([listOfIndicesInFlattened], dims) returns a tuple of arrays (eg 3 of them if 3 dimImage), 
     # where each of the array in the tuple has the same shape as the listOfIndices. 
     # They have the r/c/z coords that correspond to the index of the flattened version.
