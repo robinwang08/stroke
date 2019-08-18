@@ -5,7 +5,7 @@ import numpy as np
 
 
 def getMax():
-    mainPath = 'F:/Research/data/resampled/'
+    mainPath = 'F:/Research/data/normalized/'
     mttMax = 0
     rcbfMax = 0
     rcbvMax = 0
@@ -120,4 +120,98 @@ def normalize():
         new_img = nib.Nifti1Image(img, n1_affine, n1_header)
         nib.save(new_img, newTmax)
 
-getMax()
+def getROI():
+    mainPath = 'F:/Research/data/padded/'
+    newPath = 'F:/Research/data/padded/'
+
+    for x in range(2, 228):
+        path = mainPath + str(x)
+        normPath = newPath + str(x)
+
+        MTT = path + '/MTT.nii'
+        newMTT = normPath + '/mask.nii'
+
+        if not os.path.exists(MTT):
+            continue
+
+        if not os.path.exists(normPath):
+            os.mkdir(normPath)
+
+        n1_img = nib.load(MTT)
+        n1_header = n1_img.header
+        n1_affine = n1_img.affine
+        img = n1_img.get_fdata()
+        img[img > 0] = 1
+
+        new_img = nib.Nifti1Image(img, n1_affine, n1_header)
+        nib.save(new_img, newMTT)
+
+
+def getPad():
+    mainPath = 'F:/Research/data/normalized/'
+    newPath = 'F:/Research/data/padded/'
+
+    for x in range(2, 228):
+        path = mainPath + str(x)
+        normPath = newPath + str(x)
+        MTT = path + '/MTT.nii'
+        newMTT = normPath + '/MTT.nii'
+        if not os.path.exists(MTT):
+            continue
+        if not os.path.exists(normPath):
+            os.mkdir(normPath)
+
+        n1_img = nib.load(MTT)
+        n1_header = n1_img.header
+        n1_affine = n1_img.affine
+        img = n1_img.get_fdata()
+        # add padding
+        padded = np.pad(img, ((0, 0), (0, 0), (18, 18)), 'constant', constant_values=(0, 0))
+        new_img = nib.Nifti1Image(padded, n1_affine, n1_header)
+        nib.save(new_img, newMTT)
+
+        rCBF = path + '/rCBF.nii'
+        newrCBF = normPath + '/rCBF.nii'
+        n1_img = nib.load(rCBF)
+        n1_header = n1_img.header
+        n1_affine = n1_img.affine
+        img = n1_img.get_fdata()
+        # add padding
+        padded = np.pad(img, ((0, 0), (0, 0), (18, 18)), 'constant', constant_values=(0, 0))
+        new_img = nib.Nifti1Image(padded, n1_affine, n1_header)
+        nib.save(new_img, newrCBF)
+
+        rCBV = path + '/rCBV.nii'
+        newrCBV = normPath + '/rCBV.nii'
+        n1_img = nib.load(rCBV)
+        n1_header = n1_img.header
+        n1_affine = n1_img.affine
+        img = n1_img.get_fdata()
+        # add padding
+        padded = np.pad(img, ((0, 0), (0, 0), (18, 18)), 'constant', constant_values=(0, 0))
+        new_img = nib.Nifti1Image(padded, n1_affine, n1_header)
+        nib.save(new_img, newrCBV)
+
+        Tmax = path + '/Tmax.nii'
+        newTmax = normPath + '/Tmax.nii'
+        n1_img = nib.load(Tmax)
+        n1_header = n1_img.header
+        n1_affine = n1_img.affine
+        img = n1_img.get_fdata()
+        # add padding
+        padded = np.pad(img, ((0, 0), (0, 0), (18, 18)), 'constant', constant_values=(0, 0))
+        new_img = nib.Nifti1Image(padded, n1_affine, n1_header)
+        nib.save(new_img, newTmax)
+
+        label = path + '/label.nii'
+        newLabel = normPath + '/label.nii'
+        n1_img = nib.load(label)
+        n1_header = n1_img.header
+        n1_affine = n1_img.affine
+        img = n1_img.get_fdata()
+        # add padding
+        padded = np.pad(img, ((0, 0), (0, 0), (18, 18)), 'constant', constant_values=(0, 0))
+        new_img = nib.Nifti1Image(padded, n1_affine, n1_header)
+        nib.save(new_img, newLabel)
+
+getROI()
