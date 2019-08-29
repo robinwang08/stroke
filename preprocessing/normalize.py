@@ -5,7 +5,7 @@ import numpy as np
 
 
 def getMax():
-    mainPath = 'F:/Research/data/normalized/'
+    mainPath = 'F:/Research/data/resampled/'
     mttMax = 0
     rcbfMax = 0
     rcbvMax = 0
@@ -147,6 +147,33 @@ def getROI():
         nib.save(new_img, newMTT)
 
 
+def getISLESROI():
+    mainPath = 'F:/Research/isles2/'
+    newPath = 'F:/Research/isles2/'
+
+    for x in range(1, 95):
+        path = mainPath + 'case_' + str(x)
+        normPath = newPath + 'case_' + str(x)
+
+        MTT = path + '/CT_MTT.nii'
+        newMTT = normPath + '/mask.nii'
+
+        if not os.path.exists(MTT):
+            continue
+
+        if not os.path.exists(normPath):
+            os.mkdir(normPath)
+
+        n1_img = nib.load(MTT)
+        n1_header = n1_img.header
+        n1_affine = n1_img.affine
+        img = n1_img.get_fdata()
+        img[img > 0] = 1
+
+        new_img = nib.Nifti1Image(img, n1_affine, n1_header)
+        nib.save(new_img, newMTT)
+
+
 def getPad():
     mainPath = 'F:/Research/data/normalized/'
     newPath = 'F:/Research/data/padded/'
@@ -214,4 +241,4 @@ def getPad():
         new_img = nib.Nifti1Image(padded, n1_affine, n1_header)
         nib.save(new_img, newLabel)
 
-getROI()
+getISLESROI()
