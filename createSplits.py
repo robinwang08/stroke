@@ -15,7 +15,7 @@ if __name__ == '__main__':
     X_train, X_val_test, y_train, y_val_test = train_test_split(X, y, test_size=config.VALIDATION_SPLIT, random_state=config.SEED)
     X_validation, X_test, y_validation, y_test = train_test_split(X_val_test, y_val_test, test_size=config.TEST_SPLIT, random_state=config.SEED)
 
-    path = '/media/user1/my4TB/robin/stroke/normalized/'
+    path = '/media/user1/my4TB/robin/stroke/isles2/'
 
     train = X_train['FileNumber']
     validation = X_validation['FileNumber']
@@ -30,12 +30,12 @@ if __name__ == '__main__':
     trainroi = open(config.train_roi, 'w')
 
     for x in train:
-        trainmtt.write(path + str(x) + '/MTT.nii' + '\n')
-        trainrcbf.write(path + str(x) + '/rCBF.nii' + '\n')
-        trainrcbv.write(path + str(x) + '/rCBV.nii' + '\n')
-        traintmax.write(path + str(x) + '/Tmax.nii' + '\n')
-        traingt.write(path + str(x) + '/label.nii' + '\n')
-        trainroi.write(path + str(x) + '/mask.nii' + '\n')
+        trainmtt.write(path + 'case_' + str(x) + '/CT_MTT.nii' + '\n')
+        trainrcbf.write(path + 'case_' + str(x) + '/CT_CBF.nii' + '\n')
+        trainrcbv.write(path + 'case_' + str(x) + '/CT_CBV.nii' + '\n')
+        traintmax.write(path + 'case_' + str(x) + '/CT_Tmax.nii' + '\n')
+        traingt.write(path + 'case_' + str(x) + '/CT_OT.nii' + '\n')
+        trainroi.write(path + 'case_' + str(x) + '/mask.nii' + '\n')
     trainmtt.close()
     trainrcbf.close()
     trainrcbv.close()
@@ -51,12 +51,12 @@ if __name__ == '__main__':
     validationpred = open(config.validation_pred, 'w')
     validationroi = open(config.validation_roi, 'w')
     for x in validation:
-        validationmtt.write(path + str(x) + '/MTT.nii' + '\n')
-        validationrcbf.write(path + str(x) + '/rCBF.nii' + '\n')
-        validationrcbv.write(path + str(x) + '/rCBV.nii' + '\n')
-        validationtmax.write(path + str(x) + '/Tmax.nii' + '\n')
-        validationgt.write(path + str(x) + '/label.nii' + '\n')
-        validationroi.write(path + str(x) + '/mask.nii' + '\n')
+        validationmtt.write(path + 'case_' + str(x) + '/CT_MTT.nii' + '\n')
+        validationrcbf.write(path + 'case_' + str(x) + '/CT_CBF.nii' + '\n')
+        validationrcbv.write(path + 'case_' + str(x) + '/CT_CBV.nii' + '\n')
+        validationtmax.write(path + 'case_' + str(x) + '/CT_Tmax.nii' + '\n')
+        validationgt.write(path + 'case_' + str(x) + '/CT_OT.nii' + '\n')
+        validationroi.write(path + 'case_' + str(x) + '/mask.nii' + '\n')
         validationpred.write(str(x) + '-pred.nii' + '\n')
     validationmtt.close()
     validationrcbf.close()
@@ -74,12 +74,12 @@ if __name__ == '__main__':
     testpred = open(config.test_pred, 'w')
     testroi = open(config.test_roi, 'w')
     for x in test:
-        testmtt.write(path + str(x) + '/MTT.nii' + '\n')
-        testrcbf.write(path + str(x) + '/rCBF.nii' + '\n')
-        testrcbv.write(path + str(x) + '/rCBV.nii' + '\n')
-        testtmax.write(path + str(x) + '/Tmax.nii' + '\n')
-        testgt.write(path + str(x) + '/label.nii' + '\n')
-        testroi.write(path + str(x) + '/mask.nii' + '\n')
+        testmtt.write(path + 'case_' + str(x) + '/CT_MTT.nii' + '\n')
+        testrcbf.write(path + 'case_' + str(x) + '/CT_CBF.nii' + '\n')
+        testrcbv.write(path + 'case_' + str(x) + '/CT_CBV.nii' + '\n')
+        testtmax.write(path + 'case_' + str(x) + '/CT_Tmax.nii' + '\n')
+        testgt.write(path + 'case_' + str(x) + '/CT_OT.nii' + '\n')
+        testroi.write(path + 'case_' + str(x) + '/mask.nii' + '\n')
         testpred.write(str(x) + '-pred.nii' + '\n')
     testmtt.close()
     testrcbf.close()

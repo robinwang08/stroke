@@ -1,17 +1,14 @@
 import os
 from shutil import copyfile
 
-#mainPath = 'F:/Research/data/grayscale/'
+mainPath = 'F:/Research/data/segmented/'
 mrPath = 'F:/Research/data/resampled/'
 
 for x in range(2, 228):
 
-    #path = mainPath + str(x) + '/'
-    mrxpath = mrPath + str(x) + '/'
+    path = mainPath + str(x) + '/MRregistered/registered' + str(x) + 'label.nii'
 
-    label = mrxpath + 'label.nii'
-
-    if not os.path.exists(label):
+    if not os.path.exists(path):
         continue
 
     #MTTpath = path + 'MTTnii/MTT.nii'
@@ -19,11 +16,7 @@ for x in range(2, 228):
     #rCBVpath = path + 'rCBVnii/rCBV.nii'
     #Tmaxpath = path + 'Tmaxnii/Tmax.nii'
 
-
-
-    #newPath = 'F:/Research/data/stroke/' + str(x) + '/'
-
-    newPath = 'F:/Research/data/normalized/' + str(x) + '/'
+    newPath = mrPath + str(x) + '/'
 
     if not os.path.exists(newPath):
         os.mkdir(newPath)
@@ -40,4 +33,4 @@ for x in range(2, 228):
     #copyfile(rCBVpath, newrCBVpath)
     #copyfile(Tmaxpath, newTmaxpath)
 
-    copyfile(label, newlabel)
+    copyfile(path, newlabel)
