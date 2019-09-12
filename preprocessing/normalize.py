@@ -148,8 +148,8 @@ def getROI():
 
 
 def getISLESROI():
-    mainPath = 'F:/Research/isles2/'
-    newPath = 'F:/Research/isles2/'
+    mainPath = 'F:/Research/isles_padded/'
+    newPath = 'F:/Research/isles_padded/'
 
     for x in range(1, 95):
         path = mainPath + 'case_' + str(x)
@@ -232,6 +232,74 @@ def getPad():
 
         label = path + '/label.nii'
         newLabel = normPath + '/label.nii'
+        n1_img = nib.load(label)
+        n1_header = n1_img.header
+        n1_affine = n1_img.affine
+        img = n1_img.get_fdata()
+        # add padding
+        padded = np.pad(img, ((0, 0), (0, 0), (18, 18)), 'constant', constant_values=(0, 0))
+        new_img = nib.Nifti1Image(padded, n1_affine, n1_header)
+        nib.save(new_img, newLabel)
+
+
+def getISLEPad():
+    mainPath = 'F:/Research/isles2/'
+    newPath = 'F:/Research/isles_padded/'
+
+    for x in range(1, 95):
+        path = mainPath + 'case_' + str(x)
+        normPath = newPath + 'case_' + str(x)
+        MTT = path + '/CT_MTT.nii'
+        newMTT = normPath + '/CT_MTT.nii'
+        if not os.path.exists(MTT):
+            continue
+        if not os.path.exists(normPath):
+            os.mkdir(normPath)
+
+        n1_img = nib.load(MTT)
+        n1_header = n1_img.header
+        n1_affine = n1_img.affine
+        img = n1_img.get_fdata()
+        # add padding
+        padded = np.pad(img, ((0, 0), (0, 0), (18, 18)), 'constant', constant_values=(0, 0))
+        new_img = nib.Nifti1Image(padded, n1_affine, n1_header)
+        nib.save(new_img, newMTT)
+
+        rCBF = path + '/CT_CBF.nii'
+        newrCBF = normPath + '/CT_CBF.nii'
+        n1_img = nib.load(rCBF)
+        n1_header = n1_img.header
+        n1_affine = n1_img.affine
+        img = n1_img.get_fdata()
+        # add padding
+        padded = np.pad(img, ((0, 0), (0, 0), (18, 18)), 'constant', constant_values=(0, 0))
+        new_img = nib.Nifti1Image(padded, n1_affine, n1_header)
+        nib.save(new_img, newrCBF)
+
+        rCBV = path + '/CT_CBV.nii'
+        newrCBV = normPath + '/CT_CBV.nii'
+        n1_img = nib.load(rCBV)
+        n1_header = n1_img.header
+        n1_affine = n1_img.affine
+        img = n1_img.get_fdata()
+        # add padding
+        padded = np.pad(img, ((0, 0), (0, 0), (18, 18)), 'constant', constant_values=(0, 0))
+        new_img = nib.Nifti1Image(padded, n1_affine, n1_header)
+        nib.save(new_img, newrCBV)
+
+        Tmax = path + '/CT_Tmax.nii'
+        newTmax = normPath + '/CT_Tmax.nii'
+        n1_img = nib.load(Tmax)
+        n1_header = n1_img.header
+        n1_affine = n1_img.affine
+        img = n1_img.get_fdata()
+        # add padding
+        padded = np.pad(img, ((0, 0), (0, 0), (18, 18)), 'constant', constant_values=(0, 0))
+        new_img = nib.Nifti1Image(padded, n1_affine, n1_header)
+        nib.save(new_img, newTmax)
+
+        label = path + '/OT.nii'
+        newLabel = normPath + '/OT.nii'
         n1_img = nib.load(label)
         n1_header = n1_img.header
         n1_affine = n1_img.affine
