@@ -1,13 +1,13 @@
-2019-10-15 18:43:50.413081: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
-2019-10-15 18:43:50.674933: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
+2019-10-24 17:49:53.474366: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2019-10-24 17:49:53.808614: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
 name: Quadro GV100 major: 7 minor: 0 memoryClockRate(GHz): 1.627
 pciBusID: 0000:20:00.0
 totalMemory: 31.72GiB freeMemory: 31.31GiB
-2019-10-15 18:43:50.674968: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
-2019-10-15 18:43:52.213168: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
-2019-10-15 18:43:52.213201: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
-2019-10-15 18:43:52.213207: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
-2019-10-15 18:43:52.213620: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/device:GPU:0 with 30378 MB memory) -> physical GPU (device: 0, name: Quadro GV100, pci bus id: 0000:20:00.0, compute capability: 7.0)
+2019-10-24 17:49:53.808653: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-10-24 17:50:09.299353: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-10-24 17:50:09.299401: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-10-24 17:50:09.299414: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-10-24 17:50:09.300703: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/device:GPU:0 with 30378 MB memory) -> physical GPU (device: 0, name: Quadro GV100, pci bus id: 0000:20:00.0, compute capability: 7.0)
 Given configuration file:  /home/user1/robin/stroke/stroke/examples/configFiles/stroke/model/modelConfig.cfg
 Given configuration file:  /home/user1/robin/stroke/stroke/examples/configFiles/stroke/test/testConfig.cfg
 Creating necessary folders for testing session...
@@ -15,27 +15,27 @@ Creating necessary folders for testing session...
 
 ======================== Starting new session ============================
 Command line arguments given: 
-Namespace(device='cuda0', model_cfg='./examples/configFiles/stroke/model/modelConfig.cfg', reset_trainer=False, saved_model='/media/user1/my4TB/robin/stroke/output/saved_models/new/stroke.new.final.2019-10-14.23.47.40.438972.model.ckpt', test_cfg='./examples/configFiles/stroke/test/testConfig.cfg', train_cfg=None)
+Namespace(device='cuda0', model_cfg='./examples/configFiles/stroke/model/modelConfig.cfg', reset_trainer=False, saved_model='/media/user1/my4TB/robin/stroke/output/saved_models/new/stroke.new.final.2019-10-22.07.24.23.813019.model.ckpt', test_cfg='./examples/configFiles/stroke/test/testConfig.cfg', train_cfg=None)
 Available devices to Tensorflow:
 [name: "/device:CPU:0"
 device_type: "CPU"
 memory_limit: 268435456
 locality {
 }
-incarnation: 18304283209743837721
+incarnation: 4553906585542518384
 , name: "/device:XLA_GPU:0"
 device_type: "XLA_GPU"
 memory_limit: 17179869184
 locality {
 }
-incarnation: 15573094985806818497
+incarnation: 7753504528010223913
 physical_device_desc: "device: XLA_GPU device"
 , name: "/device:XLA_CPU:0"
 device_type: "XLA_CPU"
 memory_limit: 17179869184
 locality {
 }
-incarnation: 8843956113252352014
+incarnation: 15161943131560773170
 physical_device_desc: "device: XLA_CPU device"
 , name: "/device:GPU:0"
 device_type: "GPU"
@@ -45,7 +45,7 @@ locality {
   links {
   }
 }
-incarnation: 4439323258928195446
+incarnation: 4321135914505085467
 physical_device_desc: "device: 0, name: Quadro GV100, pci bus id: 0000:20:00.0, compute capability: 7.0"
 ]
 CONFIG: The configuration file for the [model] given is: /home/user1/robin/stroke/stroke/examples/configFiles/stroke/model/modelConfig.cfg
@@ -82,9 +82,9 @@ Residual connections added at the output of layers (indices from 0) = [1]
 Layers that will be made of Lower Rank (indices from 0) = []
 Dimensions of Kernels in the 1st FC layer (Classif. layer if no hidden FCs used) = [3, 3, 3]
 ~~Size Of Image Segments~~
-Size of Segments for Training = [37, 37, 37]
-Size of Segments for Validation = [17, 17, 17]
-Size of Segments for Testing = [45, 45, 45]
+Size of Segments for Training = [50, 50, 50]
+Size of Segments for Validation = [25, 25, 25]
+Size of Segments for Testing = [60, 60, 60]
 ~~Dropout Rates~~
 Drop.R. for each layer in Normal Pathway = []
 Drop.R. for each layer in Subsampled Pathway = []
@@ -106,7 +106,7 @@ CONFIG: The configuration file for the [session] was loaded from: /home/user1/ro
 =========== PARAMETERS OF THIS TESTING SESSION ==============
 =============================================================
 sessionName = new
-Model will be loaded from save = /media/user1/my4TB/robin/stroke/output/saved_models/new/stroke.new.final.2019-10-14.23.47.40.438972.model.ckpt
+Model will be loaded from save = /media/user1/my4TB/robin/stroke/output/saved_models/new/stroke.new.final.2019-10-22.07.24.23.813019.model.ckpt
 ~~~~~~~~~~~~~~~~~~~~INPUT~~~~~~~~~~~~~~~~
 Number of cases to perform inference on = 8
 Paths to the channels of each case = [['/media/user1/my4TB/robin/stroke/new_all_padded/case_43/MTT.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_43/rCBF.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_43/rCBV.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_43/Tmax.nii'], ['/media/user1/my4TB/robin/stroke/new_all_padded/case_47/MTT.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_47/rCBF.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_47/rCBV.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_47/Tmax.nii'], ['/media/user1/my4TB/robin/stroke/new_all_padded/case_9/MTT.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_9/rCBF.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_9/rCBV.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_9/Tmax.nii'], ['/media/user1/my4TB/robin/stroke/new_all_padded/case_68/MTT.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_68/rCBF.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_68/rCBV.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_68/Tmax.nii'], ['/media/user1/my4TB/robin/stroke/new_all_padded/case_17/MTT.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_17/rCBF.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_17/rCBV.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_17/Tmax.nii'], ['/media/user1/my4TB/robin/stroke/new_all_padded/181/MTT.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/181/rCBF.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/181/rCBV.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/181/Tmax.nii'], ['/media/user1/my4TB/robin/stroke/new_all_padded/case_30/MTT.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_30/rCBF.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_30/rCBV.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_30/Tmax.nii'], ['/media/user1/my4TB/robin/stroke/new_all_padded/case_39/MTT.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_39/rCBF.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_39/rCBV.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_39/Tmax.nii']]
@@ -114,11 +114,11 @@ Paths to provided GT labels per case = ['/media/user1/my4TB/robin/stroke/new_all
 Filepaths of the ROI Masks provided per case = ['/media/user1/my4TB/robin/stroke/new_all_padded/case_43/mask.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_47/mask.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_9/mask.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_68/mask.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_17/mask.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/181/mask.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_30/mask.nii', '/media/user1/my4TB/robin/stroke/new_all_padded/case_39/mask.nii']
 Batch size = 10
 ~~~~~~~~~~~~~~~~~~~OUTPUT~~~~~~~~~~~~~~~
-Path to the main output-folder = /media/user1/my4TB/robin/stroke/output2019-10-15 18:43:53.953221: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
-2019-10-15 18:43:53.953259: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
-2019-10-15 18:43:53.953266: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
-2019-10-15 18:43:53.953271: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
-2019-10-15 18:43:53.953655: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 30378 MB memory) -> physical GPU (device: 0, name: Quadro GV100, pci bus id: 0000:20:00.0, compute capability: 7.0)
+Path to the main output-folder = /media/user1/my4TB/robin/stroke/output2019-10-24 17:50:11.134850: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-10-24 17:50:11.134893: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-10-24 17:50:11.134899: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-10-24 17:50:11.134904: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-10-24 17:50:11.135267: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 30378 MB memory) -> physical GPU (device: 0, name: Quadro GV100, pci bus id: 0000:20:00.0, compute capability: 7.0)
 
 Provided names to use to save results for each case = ['case_43-pred.nii', 'case_47-pred.nii', 'case_9-pred.nii', 'case_68-pred.nii', 'case_17-pred.nii', '181-pred.nii', 'case_30-pred.nii', 'case_39-pred.nii']
 ~~~~~~~Ouput-parameters for Predictions (segmentation and probability maps)~~~~
@@ -141,40 +141,40 @@ Pad Input Images = True
 =========== Making the CNN graph... ===============
 ...Building the CNN model...
 [Pathway_NORMAL] is being built...
-	[Pathway_NORMAL]: Input's Shape: (Train) [None, 4, 37, 37, 37], (Val) [None, 4, 17, 17, 17], (Test) [None, 4, 45, 45, 45]
+	[Pathway_NORMAL]: Input's Shape: (Train) [None, 4, 50, 50, 50], (Val) [None, 4, 25, 25, 25], (Test) [None, 4, 60, 60, 60]
 	[Conv.Layer_0], Filter Shape: [30, 4, 3, 3, 3]
-	[Conv.Layer_0], Input's Shape: (Train) [None, 4, 37, 37, 37], (Val) [None, 4, 17, 17, 17], (Test) [None, 4, 45, 45, 45]
+	[Conv.Layer_0], Input's Shape: (Train) [None, 4, 50, 50, 50], (Val) [None, 4, 25, 25, 25], (Test) [None, 4, 60, 60, 60]
 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
-	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 35, 35, 35], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 43, 43, 43]
+	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 48, 48, 48], (Val) [None, 30, 23, 23, 23], (Test) [None, 30, 58, 58, 58]
 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
-	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 33, 33, 33], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 41, 41, 41]
+	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 46, 46, 46], (Val) [None, 30, 21, 21, 21], (Test) [None, 30, 56, 56, 56]
 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
-	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 31, 31, 31], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 39, 39, 39]
+	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 44, 44, 44], (Val) [None, 40, 19, 19, 19], (Test) [None, 40, 54, 54, 54]
 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_3] to input of previous layer.
 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
-	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 29, 29, 29], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 37, 37, 37]
+	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 42, 42, 42], (Val) [None, 40, 17, 17, 17], (Test) [None, 40, 52, 52, 52]
 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
-	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 27, 27, 27], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 35, 35, 35]
+	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 40, 40, 40], (Val) [None, 40, 15, 15, 15], (Test) [None, 40, 50, 50, 50]
 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_5] to input of previous layer.
 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
-	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 25, 25, 25], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 33, 33, 33]
+	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 38, 38, 38], (Val) [None, 40, 13, 13, 13], (Test) [None, 40, 48, 48, 48]
 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
-	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 23, 23, 23], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 31, 31, 31]
+	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 36, 36, 36], (Val) [None, 50, 11, 11, 11], (Test) [None, 50, 46, 46, 46]
 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_7] to input of previous layer.
-	[Pathway_NORMAL]: Output's Shape: (Train) [None, 50, 21, 21, 21], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 29, 29, 29]
+	[Pathway_NORMAL]: Output's Shape: (Train) [None, 50, 34, 34, 34], (Val) [None, 50, 9, 9, 9], (Test) [None, 50, 44, 44, 44]
 [Pathway_NORMAL] done.
 DEBUG: Shape of the kernel of the first FC layer is : [3, 3, 3]
 DEBUG: Input to the FC Pathway will be padded by that many voxels per dimension: [2, 2, 2]
 [Pathway_FC] is being built...
-	[Pathway_FC]: Input's Shape: (Train) [None, 50, 23, 23, 23], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 31, 31, 31]
+	[Pathway_FC]: Input's Shape: (Train) [None, 50, 36, 36, 36], (Val) [None, 50, 11, 11, 11], (Test) [None, 50, 46, 46, 46]
 	[Conv.Layer_0], Filter Shape: [250, 50, 3, 3, 3]
-	[Conv.Layer_0], Input's Shape: (Train) [None, 50, 23, 23, 23], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 31, 31, 31]
+	[Conv.Layer_0], Input's Shape: (Train) [None, 50, 36, 36, 36], (Val) [None, 50, 11, 11, 11], (Test) [None, 50, 46, 46, 46]
 	[Conv.Layer_1], Filter Shape: [250, 250, 1, 1, 1]
-	[Conv.Layer_1], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
+	[Conv.Layer_1], Input's Shape: (Train) [None, 250, 34, 34, 34], (Val) [None, 250, 9, 9, 9], (Test) [None, 250, 44, 44, 44]
 	[Pathway_FC]: making Residual Connection between output of [Layer_1] to input of previous layer.
 	[Conv.Layer_2], Filter Shape: [2, 250, 1, 1, 1]
-	[Conv.Layer_2], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
-	[Pathway_FC]: Output's Shape: (Train) [None, 2, 21, 21, 21], (Val) [None, 2, 1, 1, 1], (Test) [None, 2, 29, 29, 29]
+	[Conv.Layer_2], Input's Shape: (Train) [None, 250, 34, 34, 34], (Val) [None, 250, 9, 9, 9], (Test) [None, 250, 44, 44, 44]
+	[Pathway_FC]: Output's Shape: (Train) [None, 2, 34, 34, 34], (Val) [None, 2, 9, 9, 9], (Test) [None, 2, 44, 44, 44]
 [Pathway_FC] done.
 Adding the final Softmax Target layer...
 Finished building the CNN's model.
@@ -185,7 +185,7 @@ Finished building the CNN's model.
 ...Collecting ops and feeds for testing...
 Done.
 =========== Loading parameters from specified saved model ===============
-Loading parameters from:/media/user1/my4TB/robin/stroke/output/saved_models/new/stroke.new.final.2019-10-14.23.47.40.438972.model.ckpt
+Loading parameters from:/media/user1/my4TB/robin/stroke/output/saved_models/new/stroke.new.final.2019-10-22.07.24.23.813019.model.ckpt
 Parameters were loaded.
 
 ======================================================
@@ -202,16 +202,14 @@ Parameters were loaded.
 Starting to (tile) extract Segments from the images of the subject for Segmentation...
 Finished (tiling) extracting Segments from the images of the subject for Segmentation.
 Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
-Total number of Segments to process:130
-Processed 10/130 segments.
-Processed 20/130 segments.
-Processed 40/130 segments.
-Processed 60/130 segments.
-Processed 80/130 segments.
-Processed 100/130 segments.
-Processed 120/130 segments.
-Processed 130/130 segments.
-TIMING: Segmentation of subject: [Extracting:] 0.00 [Loading:] 0.12 [ForwardPass:] 4.48 [Total:] 4.60 secs.
+Total number of Segments to process:60
+Processed 10/60 segments.
+Processed 20/60 segments.
+Processed 30/60 segments.
+Processed 40/60 segments.
+Processed 50/60 segments.
+Processed 60/60 segments.
+TIMING: Segmentation of subject: [Extracting:] 0.00 [Loading:] 0.18 [ForwardPass:] 8.11 [Total:] 8.29 secs.
 Saving the new label (segmentation) image for the subject #0
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_43-pred_Segm.nii.gz
 Saving the new label (segmentation) image for the subject #0
@@ -219,7 +217,7 @@ Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictio
 Saving the new label (segmentation) image for the subject #0
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_43-pred_ProbMapClass1.nii.gz
 +++++++++++++++++++++ Reporting Segmentation Metrics for the subject #0 ++++++++++++++++++++++++++
-ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #0 equal: DICE1=[ 0.7569 0.7569 ] DICE2=[ 0.7572 0.7572 ] DICE3=[ 0.7638 0.7638 ]
+ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #0 equal: DICE1=[ 0.7654 0.7654 ] DICE2=[ 0.7644 0.7644 ] DICE3=[ 0.7712 0.7712 ]
 EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems.
 EXPLANATION: DICE1 is calculated as segmentation over whole volume VS whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
 EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or DICE3.
@@ -230,16 +228,14 @@ EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or
 Starting to (tile) extract Segments from the images of the subject for Segmentation...
 Finished (tiling) extracting Segments from the images of the subject for Segmentation.
 Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
-Total number of Segments to process:140
-Processed 10/140 segments.
-Processed 20/140 segments.
-Processed 40/140 segments.
-Processed 60/140 segments.
-Processed 80/140 segments.
-Processed 100/140 segments.
-Processed 120/140 segments.
-Processed 140/140 segments.
-TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.12 [ForwardPass:] 2.48 [Total:] 2.61 secs.
+Total number of Segments to process:60
+Processed 10/60 segments.
+Processed 20/60 segments.
+Processed 30/60 segments.
+Processed 40/60 segments.
+Processed 50/60 segments.
+Processed 60/60 segments.
+TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.18 [ForwardPass:] 3.79 [Total:] 3.98 secs.
 Saving the new label (segmentation) image for the subject #1
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_47-pred_Segm.nii.gz
 Saving the new label (segmentation) image for the subject #1
@@ -247,7 +243,7 @@ Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictio
 Saving the new label (segmentation) image for the subject #1
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_47-pred_ProbMapClass1.nii.gz
 +++++++++++++++++++++ Reporting Segmentation Metrics for the subject #1 ++++++++++++++++++++++++++
-ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #1 equal: DICE1=[ 0.8023 0.8023 ] DICE2=[ 0.8061 0.8061 ] DICE3=[ 0.8093 0.8093 ]
+ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #1 equal: DICE1=[ 0.7400 0.7400 ] DICE2=[ 0.7410 0.7410 ] DICE3=[ 0.7443 0.7443 ]
 EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems.
 EXPLANATION: DICE1 is calculated as segmentation over whole volume VS whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
 EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or DICE3.
@@ -258,14 +254,14 @@ EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or
 Starting to (tile) extract Segments from the images of the subject for Segmentation...
 Finished (tiling) extracting Segments from the images of the subject for Segmentation.
 Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
-Total number of Segments to process:150
-Processed 10/150 segments.
-Processed 30/150 segments.
-Processed 60/150 segments.
-Processed 90/150 segments.
-Processed 120/150 segments.
-Processed 150/150 segments.
-TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.15 [ForwardPass:] 2.63 [Total:] 2.78 secs.
+Total number of Segments to process:60
+Processed 10/60 segments.
+Processed 20/60 segments.
+Processed 30/60 segments.
+Processed 40/60 segments.
+Processed 50/60 segments.
+Processed 60/60 segments.
+TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.17 [ForwardPass:] 3.79 [Total:] 3.97 secs.
 Saving the new label (segmentation) image for the subject #2
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_9-pred_Segm.nii.gz
 Saving the new label (segmentation) image for the subject #2
@@ -273,7 +269,7 @@ Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictio
 Saving the new label (segmentation) image for the subject #2
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_9-pred_ProbMapClass1.nii.gz
 +++++++++++++++++++++ Reporting Segmentation Metrics for the subject #2 ++++++++++++++++++++++++++
-ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #2 equal: DICE1=[ 0.4082 0.4082 ] DICE2=[ 0.4050 0.4050 ] DICE3=[ 0.4134 0.4134 ]
+ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #2 equal: DICE1=[ 0.4489 0.4489 ] DICE2=[ 0.4462 0.4462 ] DICE3=[ 0.4552 0.4552 ]
 EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems.
 EXPLANATION: DICE1 is calculated as segmentation over whole volume VS whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
 EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or DICE3.
@@ -284,16 +280,14 @@ EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or
 Starting to (tile) extract Segments from the images of the subject for Segmentation...
 Finished (tiling) extracting Segments from the images of the subject for Segmentation.
 Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
-Total number of Segments to process:140
-Processed 10/140 segments.
-Processed 20/140 segments.
-Processed 40/140 segments.
-Processed 60/140 segments.
-Processed 80/140 segments.
-Processed 100/140 segments.
-Processed 120/140 segments.
-Processed 140/140 segments.
-TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.13 [ForwardPass:] 2.46 [Total:] 2.60 secs.
+Total number of Segments to process:60
+Processed 10/60 segments.
+Processed 20/60 segments.
+Processed 30/60 segments.
+Processed 40/60 segments.
+Processed 50/60 segments.
+Processed 60/60 segments.
+TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.20 [ForwardPass:] 3.82 [Total:] 4.03 secs.
 Saving the new label (segmentation) image for the subject #3
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_68-pred_Segm.nii.gz
 Saving the new label (segmentation) image for the subject #3
@@ -301,7 +295,7 @@ Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictio
 Saving the new label (segmentation) image for the subject #3
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_68-pred_ProbMapClass1.nii.gz
 +++++++++++++++++++++ Reporting Segmentation Metrics for the subject #3 ++++++++++++++++++++++++++
-ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #3 equal: DICE1=[ 0.5411 0.5411 ] DICE2=[ 0.5421 0.5421 ] DICE3=[ 0.5425 0.5425 ]
+ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #3 equal: DICE1=[ 0.6504 0.6504 ] DICE2=[ 0.6512 0.6512 ] DICE3=[ 0.6518 0.6518 ]
 EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems.
 EXPLANATION: DICE1 is calculated as segmentation over whole volume VS whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
 EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or DICE3.
@@ -312,14 +306,14 @@ EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or
 Starting to (tile) extract Segments from the images of the subject for Segmentation...
 Finished (tiling) extracting Segments from the images of the subject for Segmentation.
 Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
-Total number of Segments to process:100
-Processed 10/100 segments.
-Processed 20/100 segments.
-Processed 40/100 segments.
-Processed 60/100 segments.
-Processed 80/100 segments.
-Processed 100/100 segments.
-TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.09 [ForwardPass:] 1.76 [Total:] 1.85 secs.
+Total number of Segments to process:60
+Processed 10/60 segments.
+Processed 20/60 segments.
+Processed 30/60 segments.
+Processed 40/60 segments.
+Processed 50/60 segments.
+Processed 60/60 segments.
+TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.21 [ForwardPass:] 3.80 [Total:] 4.01 secs.
 Saving the new label (segmentation) image for the subject #4
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_17-pred_Segm.nii.gz
 Saving the new label (segmentation) image for the subject #4
@@ -327,7 +321,7 @@ Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictio
 Saving the new label (segmentation) image for the subject #4
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_17-pred_ProbMapClass1.nii.gz
 +++++++++++++++++++++ Reporting Segmentation Metrics for the subject #4 ++++++++++++++++++++++++++
-ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #4 equal: DICE1=[ 0.4811 0.4811 ] DICE2=[ 0.4811 0.4811 ] DICE3=[ 0.4812 0.4812 ]
+ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #4 equal: DICE1=[ 0.4026 0.4026 ] DICE2=[ 0.4026 0.4026 ] DICE3=[ 0.4027 0.4027 ]
 EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems.
 EXPLANATION: DICE1 is calculated as segmentation over whole volume VS whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
 EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or DICE3.
@@ -338,15 +332,17 @@ EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or
 Starting to (tile) extract Segments from the images of the subject for Segmentation...
 Finished (tiling) extracting Segments from the images of the subject for Segmentation.
 Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
-Total number of Segments to process:180
-Processed 10/180 segments.
-Processed 30/180 segments.
-Processed 60/180 segments.
-Processed 90/180 segments.
-Processed 120/180 segments.
-Processed 150/180 segments.
-Processed 180/180 segments.
-TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.21 [ForwardPass:] 3.16 [Total:] 3.38 secs.
+Total number of Segments to process:90
+Processed 10/90 segments.
+Processed 20/90 segments.
+Processed 30/90 segments.
+Processed 40/90 segments.
+Processed 50/90 segments.
+Processed 60/90 segments.
+Processed 70/90 segments.
+Processed 80/90 segments.
+Processed 90/90 segments.
+TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.33 [ForwardPass:] 5.69 [Total:] 6.03 secs.
 Saving the new label (segmentation) image for the subject #5
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/181-pred_Segm.nii.gz
 Saving the new label (segmentation) image for the subject #5
@@ -354,7 +350,7 @@ Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictio
 Saving the new label (segmentation) image for the subject #5
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/181-pred_ProbMapClass1.nii.gz
 +++++++++++++++++++++ Reporting Segmentation Metrics for the subject #5 ++++++++++++++++++++++++++
-ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #5 equal: DICE1=[ 0.0270 0.0270 ] DICE2=[ 0.0312 0.0312 ] DICE3=[ 0.0312 0.0312 ]
+ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #5 equal: DICE1=[ 0.0382 0.0382 ] DICE2=[ 0.0439 0.0439 ] DICE3=[ 0.0440 0.0440 ]
 EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems.
 EXPLANATION: DICE1 is calculated as segmentation over whole volume VS whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
 EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or DICE3.
@@ -365,16 +361,13 @@ EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or
 Starting to (tile) extract Segments from the images of the subject for Segmentation...
 Finished (tiling) extracting Segments from the images of the subject for Segmentation.
 Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
-Total number of Segments to process:130
-Processed 10/130 segments.
-Processed 20/130 segments.
-Processed 40/130 segments.
-Processed 60/130 segments.
-Processed 80/130 segments.
-Processed 100/130 segments.
-Processed 120/130 segments.
-Processed 130/130 segments.
-TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.09 [ForwardPass:] 2.28 [Total:] 2.39 secs.
+Total number of Segments to process:50
+Processed 10/50 segments.
+Processed 20/50 segments.
+Processed 30/50 segments.
+Processed 40/50 segments.
+Processed 50/50 segments.
+TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.16 [ForwardPass:] 3.16 [Total:] 3.34 secs.
 Saving the new label (segmentation) image for the subject #6
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_30-pred_Segm.nii.gz
 Saving the new label (segmentation) image for the subject #6
@@ -382,7 +375,7 @@ Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictio
 Saving the new label (segmentation) image for the subject #6
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_30-pred_ProbMapClass1.nii.gz
 +++++++++++++++++++++ Reporting Segmentation Metrics for the subject #6 ++++++++++++++++++++++++++
-ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #6 equal: DICE1=[ 0.5347 0.5347 ] DICE2=[ 0.5347 0.5347 ] DICE3=[ 0.5354 0.5354 ]
+ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #6 equal: DICE1=[ 0.5204 0.5204 ] DICE2=[ 0.5217 0.5217 ] DICE3=[ 0.5222 0.5222 ]
 EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems.
 EXPLANATION: DICE1 is calculated as segmentation over whole volume VS whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
 EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or DICE3.
@@ -393,15 +386,13 @@ EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or
 Starting to (tile) extract Segments from the images of the subject for Segmentation...
 Finished (tiling) extracting Segments from the images of the subject for Segmentation.
 Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
-Total number of Segments to process:160
-Processed 10/160 segments.
-Processed 30/160 segments.
-Processed 60/160 segments.
-Processed 90/160 segments.
-Processed 120/160 segments.
-Processed 150/160 segments.
-Processed 160/160 segments.
-TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.14 [ForwardPass:] 2.82 [Total:] 2.97 secs.
+Total number of Segments to process:50
+Processed 10/50 segments.
+Processed 20/50 segments.
+Processed 30/50 segments.
+Processed 40/50 segments.
+Processed 50/50 segments.
+TIMING: Segmentation of subject: [Extracting:] 0.01 [Loading:] 0.16 [ForwardPass:] 3.17 [Total:] 3.33 secs.
 Saving the new label (segmentation) image for the subject #7
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_39-pred_Segm.nii.gz
 Saving the new label (segmentation) image for the subject #7
@@ -409,13 +400,14 @@ Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictio
 Saving the new label (segmentation) image for the subject #7
 Image saved at: /media/user1/my4TB/robin/stroke/output/predictions/new/predictions/case_39-pred_ProbMapClass1.nii.gz
 +++++++++++++++++++++ Reporting Segmentation Metrics for the subject #7 ++++++++++++++++++++++++++
-ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #7 equal: DICE1=[ 0.2563 0.2563 ] DICE2=[ 0.2566 0.2566 ] DICE3=[ 0.2566 0.2566 ]
+ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #7 equal: DICE1=[ 0.2475 0.2475 ] DICE2=[ 0.2476 0.2476 ] DICE3=[ 0.2476 0.2476 ]
 EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems.
 EXPLANATION: DICE1 is calculated as segmentation over whole volume VS whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
 EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or DICE3.
 +++++++++++++++++++++++++++++++ Segmentation of all subjects finished +++++++++++++++++++++++++++++++++++
 +++++++++++++++++++++ Reporting Average Segmentation Metrics over all subjects ++++++++++++++++++++++++++
-ACCURACY: (Testing) The Per-Class average DICE Coefficients over all subjects are: DICE1=[ 0.4760 0.4760 ] DICE2=[ 0.4767 0.4767 ] DICE3=[ 0.4792 0.4792 ]/home/user1/Envs/stroke-7IP6OJ3H/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:523: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+ACCURACY: (Testing) The Per-Class average DICE Coefficients over all subjects are: DICE1=[ 0.4767 0.4767 ] DICE2=[ 0.4773 0.4773 ] DICE3=[ 0.4799 0.4799 ]
+EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems./home/user1/Envs/stroke-7IP6OJ3H/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:523: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_qint8 = np.dtype([("qint8", np.int8, 1)])
 /home/user1/Envs/stroke-7IP6OJ3H/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:524: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
@@ -428,10 +420,9 @@ ACCURACY: (Testing) The Per-Class average DICE Coefficients over all subjects ar
 /home/user1/Envs/stroke-7IP6OJ3H/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:532: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   np_resource = np.dtype([("resource", np.ubyte, 1)])
 
-EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems.
 EXPLANATION: DICE1 is calculated as segmentation over whole volume VS whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
 EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or DICE3.
-TIMING: Testing process lasted: 38.09 secs.
+TIMING: Testing process lasted: 54.65 secs.
 ###########################################################################################################
 ############################# Finished full Segmentation of Testing subjects ##########################
 ###########################################################################################################
